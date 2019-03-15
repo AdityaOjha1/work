@@ -1,0 +1,1373 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Q!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+?using System;
+
+
+
+using System.Collections.Generic;
+
+
+
+using System.Linq;
+
+
+
+using System.Text;
+
+
+
+using System.Threading.Tasks;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    class Program
+
+
+
+    {
+
+
+
+        static void Main(string[] args)
+
+
+
+        {   string dd,mm,yyyy;
+
+
+
+            string s=Console.ReadLine();
+
+
+
+            if(s.Contains('-'))
+
+
+
+            {
+
+
+
+            string[] s1=s.Split(new char[] {'-'});
+
+
+
+            dd=s1[0];
+
+
+
+            mm=s1[1];
+
+
+
+            yyyy=s1[2];
+
+
+
+                int a=Convert.ToInt32(dd);
+
+
+
+                 int b=Convert.ToInt32(mm);
+
+
+
+              //   int c=Convert.ToInt32(yyyy);
+
+
+
+                if(a<32 && b<13 && a>0 && b>0)
+
+
+
+                { 
+
+
+
+                    Console.WriteLine("Valid");
+
+
+
+                }
+
+
+
+                else{Console.WriteLine("Invalid");}
+
+
+
+            }
+
+
+
+            else { Console.WriteLine("Invalid"); }
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<q2>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+using System;
+
+
+
+using System.Collections.Generic;
+
+
+
+using System.Linq;
+
+
+
+using System.Text;
+
+
+
+using System.Threading.Tasks;
+
+
+
+
+
+
+
+class UserMainCode
+
+
+
+{
+
+
+
+    public static Boolean validateTeam(string str)
+
+
+
+    {
+
+
+
+        if(!str.Contains("-"))
+
+
+
+        {return false;}
+
+
+
+        else
+
+
+
+        {
+
+
+
+            int i;
+
+
+
+            string[] s1 = str.Split(new char[] { '-' });
+
+
+
+            string s2 = s1[1];
+
+
+
+            string[] s3 = s1[0].Split(new char[]{' '});
+
+
+
+            if (s1[1].Length == s3.Length)
+
+
+
+            {
+
+
+
+                for (i = 0; i < s2.Length; i++)
+
+
+
+                {
+
+
+
+                    if (!s3[i].StartsWith(s2[i].ToString()))
+
+
+
+                    {
+
+
+
+                        break;
+
+
+
+                    }
+
+
+
+                }
+
+
+
+            }
+
+
+
+            else {return false;}
+
+
+
+
+
+
+
+            if ( i ==s2.Length)
+
+
+
+            { return true; }
+
+
+
+            else 
+
+
+
+            { return false; }
+
+
+
+
+
+
+
+        }
+
+
+
+    }
+
+
+
+}
+
+
+
+    class Program
+
+
+
+    {
+
+
+
+        static void Main(string[] args)
+
+
+
+        {
+
+
+
+            string str = Console.ReadLine();
+
+
+
+            if (UserMainCode.validateTeam(str))
+
+
+
+            {
+
+
+
+                Console.WriteLine("Valid");
+
+
+
+            }
+
+
+
+            else
+
+
+
+            { Console.WriteLine("Invalid"); }
+
+
+
+            Console.ReadKey();
+
+
+
+        }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+################################################3####################################
+
+
+
+?using System;
+
+
+
+using System.Collections.Generic;
+
+
+
+using System.Linq;
+
+
+
+using System.Text;
+
+
+
+using System.Threading.Tasks;
+
+
+
+
+
+
+
+    class Program
+
+
+
+    {
+
+
+
+        static void Main(string[] args)
+
+
+
+        {
+
+
+
+            string result;
+
+
+
+            string name = Console.ReadLine();
+
+
+
+            string country = Console.ReadLine();
+
+
+
+            string str = Console.ReadLine();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if (country.Contains(' '))
+
+
+
+            {
+
+
+
+                string[] arr2 = country.Split(new char[] { ' ' });
+
+
+
+                string a1 = arr2[0];
+
+
+
+                string a2 = arr2[1];
+
+
+
+                result = a1.Substring(0, 1).ToUpper() + a2.Substring(0, 1).ToUpper();
+
+
+
+            }
+
+
+
+            else
+
+
+
+            {
+
+
+
+                result = country.Substring(0, 3).ToUpper();
+
+
+
+            }
+
+
+
+            string final =name+"#"+result;
+
+
+
+
+
+
+
+         //  Console.WriteLine(final);
+
+
+
+
+
+
+
+            if (final == str)
+
+
+
+            {
+
+
+
+                Console.WriteLine("Valid");
+
+
+
+            }
+
+
+
+            else
+
+
+
+            { Console.WriteLine("Invalid"); }
+
+
+
+            Console.ReadLine();
+
+
+
+
+
+
+
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+##############################################  4   ###########################################################
+
+
+
+?using System;
+
+
+
+using System.Collections.Generic;
+
+
+
+using System.Linq;
+
+
+
+using System.Text;
+
+
+
+using System.Threading.Tasks;
+
+
+
+
+
+
+
+class Program
+
+
+
+{
+
+
+
+    static void Main(string[] args)
+
+
+
+    {
+
+
+
+        string s = Console.ReadLine();
+
+
+
+        char[] ch = s.ToCharArray();
+
+
+
+        if (((ch[0] >= 65 && ch[0] <= 90) || (ch[0] >= 97 && ch[0] <= 122))
+
+
+
+            && ((ch[1] >= 65 && ch[1] <= 90) || (ch[1] >= 97 && ch[1] <= 122))
+
+
+
+            && ((ch[ch.Length - 2] >= 65 && ch[ch.Length - 2] <= 90) || (ch[ch.Length - 2] >= 97 && ch[ch.Length - 2] <= 122))
+
+
+
+            && ((ch[ch.Length - 1] >= 65 && ch[ch.Length - 1] <= 90) || (ch[ch.Length - 1] >= 97 && ch[ch.Length - 1] <= 122)))
+
+
+
+        {
+
+
+
+            for (int i = 2; i < ch.Length - 2; i++)
+
+
+
+            {
+
+
+
+                //Console.WriteLine("I am here");
+
+
+
+                if (((ch[i] >= 65 && ch[i] <= 90) || (ch[i] >= 97 && ch[i] <= 122)))
+
+
+
+                    Console.WriteLine("Invalid");
+
+
+
+                else
+
+
+
+                    if (i == ch.Length - 3)
+
+
+
+                        Console.WriteLine("Valid");
+
+
+
+            }
+
+
+
+        }
+
+
+
+        else
+
+
+
+            Console.WriteLine("Invalid");
+
+
+
+        Console.ReadKey();
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+_________________________________________________5_______________________________________________________________________________
+
+
+
+using System;
+
+
+
+using System.Collections.Generic;
+
+
+
+using System.Linq;
+
+
+
+using System.Text;
+
+
+
+using System.Threading.Tasks;
+
+
+
+
+
+
+
+namespace ConsoleApplication12
+
+
+
+{
+
+
+
+    class Program
+
+
+
+    {
+
+
+
+        static void Main(string[] args)
+
+
+
+        {
+
+
+
+            string s = Console.ReadLine();
+
+
+
+            string s1, s2, s3;
+
+
+
+            char[] ch = s.ToCharArray();
+
+
+
+            char[] c = new char[3];
+
+
+
+            if (ch[2] >= 65 && ch[2] <= 90)
+
+
+
+            {
+
+
+
+                s1 = s.Substring(0, 3);
+
+
+
+
+
+
+
+            }
+
+
+
+            else
+
+
+
+            {
+
+
+
+                s1 = s.Substring(0, 2);
+
+
+
+
+
+
+
+            }
+
+
+
+            int k = 0;
+
+
+
+            for (int i = 0; i < ch.Length; i++)
+
+
+
+            {
+
+
+
+                if (ch[i] >= 48 && ch[i] <= 57)
+
+
+
+                {
+
+
+
+                    k = i;
+
+
+
+                    break;
+
+
+
+                }
+
+
+
+            }
+
+
+
+            s2 = s.Substring(k);
+
+
+
+            s3 = s.Substring(s1.Length, k - 3);
+
+
+
+            Console.WriteLine(s1);
+
+
+
+            Console.WriteLine(s3);
+
+
+
+            Console.WriteLine(s2);
+
+
+
+            Console.ReadKey();
+
+
+
+        }
+
+
+
+    }
+
+
+
+}
+
+
+
+______________________________________________________^_6__________________________________________________________________________
+
+
+
+using System;
+
+
+
+using System.Collections.Generic;
+
+
+
+using System.Linq;
+
+
+
+using System.Text;
+
+
+
+using System.Threading.Tasks;
+
+
+
+
+
+
+
+namespace ConsoleApplication12
+
+
+
+{
+
+
+
+    class Program
+
+
+
+    {
+
+
+
+        static void Main(string[] args)
+
+
+
+        {
+
+
+
+            string s = Console.ReadLine();
+
+
+
+            string s1, s2, s3;
+
+
+
+            char[] ch = s.ToCharArray();
+
+
+
+            char[] c = new char[3];
+
+
+
+            if (ch[2] >= 65 && ch[2] <= 90)
+
+
+
+            {
+
+
+
+                s1 = s.Substring(0, 3);
+
+
+
+
+
+
+
+            }
+
+
+
+            else
+
+
+
+            {
+
+
+
+                s1 = s.Substring(0, 2);
+
+
+
+
+
+
+
+            }
+
+
+
+            int k = 0;
+
+
+
+            for (int i = 0; i < ch.Length; i++)
+
+
+
+            {
+
+
+
+                if (ch[i] >= 48 && ch[i] <= 57)
+
+
+
+                {
+
+
+
+                    k = i;
+
+
+
+                    break;
+
+
+
+                }
+
+
+
+            }
+
+
+
+            s2 = s.Substring(k);
+
+
+
+            s3 = s.Substring(s1.Length, k - 3);
+
+
+
+            Console.WriteLine(s1);
+
+
+
+            Console.WriteLine(s3);
+
+
+
+            Console.WriteLine(s2);
+
+
+
+            Console.ReadKey();
+
+
+
+        }
+
+
+
+    }
+
+
+
+}
+
+
+
+________________________________________________________7________________________________________________________________________
+
+
+
+using System;
+
+
+
+using System.Collections.Generic;
+
+
+
+using System.Linq;
+
+
+
+using System.Text;
+
+
+
+using System.Threading.Tasks;
+
+
+
+
+
+
+
+
+
+
+
+    class Program
+
+
+
+    {
+
+
+
+        static void Main(string[] args)
+
+
+
+        {
+
+
+
+            string s = Console.ReadLine();
+
+
+
+            char[] ch = s.ToCharArray();
+
+
+
+            int i;
+
+
+
+            for (i = 0; i < ch.Length; i++)
+
+
+
+            {
+
+
+
+                if (((i + 1) % 2 == 0))
+
+
+
+                {
+
+
+
+                    if (ch[i] == 'a' || ch[i] == 'A')
+
+
+
+                    {
+
+
+
+                        Console.WriteLine("Invalid");
+
+
+
+                        break;
+
+
+
+                    }
+
+
+
+                }
+
+
+
+            }
+
+
+
+
+
+
+
+            if ((i == ch.Length))
+
+
+
+                Console.WriteLine("Valid");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Console.ReadKey();
+
+
+
+        }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+_________________________________________________________________________8________________________________________________
+
+
+
+using System;
+
+
+
+using System.Collections.Generic;
+
+
+
+using System.Linq;
+
+
+
+using System.Text;
+
+
+
+using System.Threading.Tasks;
+
+
+
+
+
+
+
+
+
+
+
+    class Program
+
+
+
+    {
+
+
+
+        static void Main(string[] args)
+
+
+
+        {
+
+
+
+            string s = Console.ReadLine();
+
+
+
+            int c = 0;
+
+
+
+            for (int i = 0; i < s.Length; i++)
+
+
+
+                if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u'
+
+
+
+                    || s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U')
+
+
+
+                    c++;
+
+
+
+            Console.WriteLine(c);
+
+
+
+            Console.ReadKey();
+
+
+
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+__________________________________________________________(9-__________________________________________________________________
+
+
+
+using System;
+
+
+
+using System.Collections.Generic;
+
+
+
+using System.Linq;
+
+
+
+using System.Text;
+
+
+
+using System.Threading.Tasks;
+
+
+
+
+
+
+
+
+
+
+
+class Program
+
+
+
+{
+
+
+
+    static void Main(string[] args)
+
+
+
+    {
+
+
+
+        string s = Console.ReadLine();
+
+
+
+
+
+
+
+        int c = 0;
+
+
+
+        for (int i = 0; i < s.Length - 2; i++)
+
+
+
+        {
+
+
+
+            int m = Convert.ToInt32(s.Substring(i, 3));
+
+
+
+            if (m % 4 == 0)
+
+
+
+                c++;
+
+
+
+        }
+
+
+
+        Console.WriteLine(c);
+
+
+
+        Console.ReadKey();
+
+
+
+    }
+
+
+
+}
+
+
+
+__________________________________________________________________________________________________________________________
