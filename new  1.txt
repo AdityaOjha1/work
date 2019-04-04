@@ -1,0 +1,103 @@
+#include<stdio.h>
+int main()
+{
+    int c=5,i,j=1,n;
+    scanf("%d",&n);
+    printf("5 ");
+    if(n>1){
+    for(i=1;i<n;i++)
+      {     
+            c=c+(11*j);
+            printf("%d ",c);
+            j=j+2;
+      }
+        
+    }
+
+    return 0;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int n,c=34,i;
+    scanf("%d",&n);
+    
+    printf("34 ");
+    for(i=1;i<n;i++)
+    {
+        c=(c/2)+1;
+        printf("%d ",c);
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int a=0,c=462,i,n;
+    scanf("%d",&n);
+    printf("462 ");
+    for(i=1;i<n;i++)
+    {
+        c=c-(42-a);
+        printf("%d ",c);
+        a=a+2;
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int c[200];
+    c[0]=3,c[1]=8;
+    int i,n;
+    scanf("%d",&n);
+    if(n==1)
+    {printf("3");}
+    else  if(n==2)
+    {printf("3 8 ");}
+    else
+    {printf("3 8 ");
+        for(i=2;i<n;i++)
+        {
+            c[i]=c[i-2]+c[i-1]+i;
+            printf("%d ",c[i]);
+        }
+    }
+    
+    return 0;
+    
+}
