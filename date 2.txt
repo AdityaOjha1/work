@@ -1,4 +1,49 @@
-					NEXT FRIDAY
+=string 2 ques 2
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class UserMainCode
+{
+    public static void DisplayAge(string s1,string s2)
+    {
+        DateTime d1 = DateTime.ParseExact(s1, "yyyy-MM-dd", null);
+        DateTime d2 = DateTime.ParseExact(s2, "yyyy-MM-dd", null);
+     
+        TimeSpan diff=(d2-d1);
+        DateTime d=DateTime.MinValue +diff;
+        int year=d.Year - 1;
+        int month=d.Month -1;
+        int days=d.Day - 1;
+        
+        Console.WriteLine(year+" Years "+month+" months "+days+" days ");
+      
+       
+        Console.ReadKey();
+    }
+}
+
+
+class Program
+{
+    public static void Main()
+    {
+        string str1 = Console.ReadLine();
+        string str2 = Console.ReadLine();
+        UserMainCode.DisplayAge(str1,str2);
+    }
+}
+
+
+
+
+===================================================================
+
+NEXT FRIDAY
 
 using System;
 using System.Collections.Generic;
