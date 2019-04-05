@@ -1,4 +1,4 @@
-file s1 ques 1
+===================file s1 ques 1
 
 ================================================
 using System;
@@ -27,3 +27,113 @@ class Program
     }
 }
 ===================================================
+file s1 q2
+==========================================
+match.cs
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace MatchProgram
+{
+    class Match
+    {
+        string teamOne;
+        string teamTwo;
+        string venue;
+        string matchDate;
+
+        public string TeamOne { get { return teamOne; } set { teamOne = value; } }
+        public string TeamTwo { get { return teamTwo; } set { teamTwo = value; } }
+        public string Venue { get { return venue; } set { venue = value; } }
+        public string MatchDate { get { return matchDate; } set { matchDate = value; } }
+
+        public Match() { }
+        public Match(string one, string two, string ven, string dt)
+        { teamOne = one; teamTwo = two; venue = ven; matchDate = dt; }
+
+        public void DisplayMatch(Match obj, int i)
+        {
+
+            Console.WriteLine("Match " + i);
+            Console.WriteLine("TeamOne : " + obj.TeamOne);
+            Console.WriteLine("TeamTwo : " + obj.TeamTwo);
+            Console.WriteLine("Venue : " + obj.venue);
+            Console.WriteLine("MatchDate : " + obj.MatchDate);
+        }
+
+        public List<Match> MatchFileStore()
+        {
+            Match obj;
+            FileStream fs = new FileStream("matches.txt", FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            Console.WriteLine("The Match Details are :");
+            char[] one;
+            List<Match> lst = new List<Match>();
+            while (sr.Peek() != -1)
+            {
+                obj = new Match();
+                one = new char[5];
+                sr.Read(one, 0, 5);
+                string str = new string(one);
+                obj.teamOne = str.Trim();
+
+
+                one = new char[5];
+                sr.Read(one, 0, 5);
+                str = new string(one);
+                obj.teamTwo = str.Trim();
+
+                one = new char[20];
+                sr.Read(one, 0, 20);
+                str = new string(one);
+                obj.venue = str.Trim();
+
+                one = new char[10];
+                sr.Read(one, 0, 10);
+                str = new string(one);
+                obj.matchDate = str.Trim();
+
+                sr.Read();
+                lst.Add(obj);
+            }
+
+            return lst;
+        }
+    }
+}
+
+
+program.cs
+
+
+
+﻿﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MatchProgram
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Match obj = new Match();
+            List<Match> all = obj.MatchFileStore();
+            for (int i = 0; i < all.Count; i++)
+            {
+                obj.DisplayMatch(all[i], i + 1);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+
+==========================================================
