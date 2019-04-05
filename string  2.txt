@@ -1,3 +1,64 @@
+string 1 q 5
+========================================================
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Enter team name");
+            string s1=Console.ReadLine();
+            Console.WriteLine("Enter starting index of the sequence");
+             int n1=Convert.ToInt32(Console.ReadLine());
+             Console.WriteLine("Enter length of the sequence");
+             int n2 = Convert.ToInt32(Console.ReadLine());
+
+             Console.WriteLine(s1.Substring(n1,n2)); 
+        }
+    }
+
+
+============================================================
+string 1 q10
+================================================================
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int x=0, y=0, U, D, L, R;
+            
+            int n=Convert.ToInt32(Console.ReadLine());
+            string s=Console.ReadLine();
+            char[] c = s.ToCharArray();
+
+            for (int i = 0; i < n; i++)
+            {
+                if (c[i] == 'U') { y = y + 1; }
+                else  if(c[i] == 'D') { y = y - 1; }
+                else if (c[i] == 'L') { x = x - 1; }
+                else  { x = x + 1; }
+            }
+            Console.WriteLine(x+" " +y);
+            
+          
+        }
+    }
+
+
+==================================================================
+
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Q!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
