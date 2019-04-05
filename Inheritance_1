@@ -48,6 +48,7 @@ class Rectangle : Shape
         return result;
     }
 }
+\
 class Circle : Shape
 {
     int _radius;
@@ -99,3 +100,199 @@ class Program
  }
 
 *****************************************************************************************
+inheritance 2 
+======================================================================
+program.cs=======
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+class Program
+{
+    static void Main(string[] args)
+	{
+
+		string name, id, address, degree, stream, specialization;
+		int age, noOfPapers, choice;
+		double grade;
+		Console.WriteLine("Menu");
+		Console.WriteLine("1) Create a Student");
+		Console.WriteLine("2) Create a UG Student");
+		Console.WriteLine("3) Create a PG Student");
+		Console.WriteLine("Enter your choice");
+ 		choice = int.Parse(Console.ReadLine());
+		Console.WriteLine("Enter name");
+		name = Console.ReadLine();
+		Console.WriteLine("Enter id");
+		id = Console.ReadLine();
+		Console.WriteLine("Enter age");
+		age = int.Parse(Console.ReadLine());
+		Console.WriteLine("Enter grade");
+		grade = double.Parse(Console.ReadLine());
+		Console.WriteLine("Enter address");
+		address = Console.ReadLine();
+		switch(choice)
+		{
+		case 1:
+			Student student = new Student(name, id, age, grade, address);
+			Console.WriteLine("Student Details");
+			student.Display();
+			if(student.IsPassed())
+				Console.WriteLine("Result : Pass");
+			else
+				Console.WriteLine("Result : Fail");
+			break;
+		case 2:
+			Console.WriteLine("Enter degree");
+			degree = Console.ReadLine();
+			Console.WriteLine("Enter stream");
+			stream = Console.ReadLine();
+			UGStudent ugstudent = new UGStudent(name, id, age, grade, address, degree, stream);
+			Console.WriteLine("UG Student Details");
+			ugstudent.Display();
+			if(ugstudent.IsPassed())
+				Console.WriteLine("Result : Pass");
+			else
+				Console.WriteLine("Result : Fail");
+			break;
+		case 3:
+			Console.WriteLine("Enter specialization");
+			specialization = Console.ReadLine();
+			Console.WriteLine("Enter number of papers published");
+			noOfPapers = int.Parse(Console.ReadLine());
+			PGStudent pgstudent = new PGStudent(name, id, age, grade, address, specialization, noOfPapers);
+			Console.WriteLine("PG Student Details");
+			pgstudent.Display();
+			if(pgstudent.IsPassed())
+				Console.WriteLine("Result : Pass");
+			else
+				Console.WriteLine("Result : Fail");
+			break;
+		default:
+			break;
+		}
+}
+	
+}
+
+
+			
+UGStudent.cs=====================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+class UGStudent:Student
+{
+    private string _degree;
+
+    public string Degree
+    {
+        get { return _degree; }
+        set { _degree = value; }
+    }
+    private string _stream;
+
+    public string Stream
+    {
+        get { return _stream; }
+        set { _stream = value; }
+    }
+    public UGStudent(string name, string id, int age, double grade, string address, string degree, string stream) : base(name, id, age, grade,  address)
+    {
+        _name = name;
+        _id = id;
+        _age = age;
+        _grade = grade;
+        _address = address;
+        _degree = degree;
+        _stream = stream;        
+    }
+    public void Display()
+    {
+        Console.WriteLine("Name : {0}\nId : {1}\nAge : {2}\nGrade : {3:0.0}\nAddress : {4}\nDegree : {5}\nStream : {6}", _name,  _id,  _age,  _grade,  _address,  _degree,  _stream);
+
+    }
+    public bool IsPassed() 
+    {
+        if (_grade > 70) { return true; }
+        else { return false; }
+    }
+}
+	
+
+
+PGStudent===============================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+class PGStudent:Student
+{
+	private string _specialization;
+	private int _noOfPapersPublished;
+	public PGStudent(string name, string id, int age, double grade, string address,string specialization,int noOfPapersPublished) : base(name, id, age, grade,  address)
+    {
+        _name = name;
+        _id = id;
+        _age = age;
+        _grade = grade;
+        _address = address;
+        _specialization = specialization;
+        _noOfPapersPublished = noOfPapersPublished;
+
+    }
+    public void Display()
+    {
+        Console.WriteLine("Name : {0}\nId : {1}\nAge : {2}\nGrade : {3:0.0}\nAddress : {4}\nSpecialization : {5}\nNo. of papers published : {6}", _name,  _id,  _age,  _grade, _address, _specialization ,_noOfPapersPublished);
+    }
+    public bool IsPassed()
+    {
+        if (_grade > 70 && _noOfPapersPublished>1) { return true; }
+        else { return false; }
+    }
+
+}
+
+Student.cs==============================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+class Student
+{
+	protected string _name;
+	protected string _id;
+	protected int _age;
+	protected double _grade;
+	protected string _address;
+	
+    public Student(string name, string id, int age, double grade, string address)
+    {
+        _name = name;
+        _id = id;
+        _age = age;
+        _grade = grade;
+        _address = address;
+    }
+    public void Display()
+    {
+        Console.WriteLine("Name : {0}\nId : {1}\nAge : {2}\nGrade : {3:0.0}\nAddress : {4}", _name, _id, _age, _grade, _address);
+    }
+    public bool IsPassed()
+    {
+        if (_grade > 50) { return true; }
+        else { return false; }
+    }
+
+
+        
+}
+
+
+    
+
+	
+======================================================================================================
+
