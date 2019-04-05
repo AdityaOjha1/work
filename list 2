@@ -1,0 +1,131 @@
+list 2 q6
+==========================================
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int i,sum = 0;
+            int n = Convert.ToInt32(Console.ReadLine());
+            List<int> list = new List<int>();
+         
+
+            for (i = 0; i < n; i++)
+            {
+                list.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+            for (i = 0; i < n; i++)
+            {
+                int reverse = 0;
+                while (list[i] != 0)
+                {
+                    reverse = reverse * 10;
+                    reverse = reverse +list[i] % 10;
+                    list[i] = list[i] / 10;
+                }
+                list[i] = reverse;
+            }
+            for (i = 0; i < n; i++)
+            {               
+                int r = 0;
+                while (list[i] > 0)
+                {   r = list[i] % 10;
+                    if (r == 7)
+                    { break; }
+                    else
+                    { sum = sum + r;}
+                      list[i] = list[i] / 10;
+                }
+            }
+            Console.WriteLine(sum);
+            Console.ReadLine();
+        }
+    }
+}
+===================================================================
+list 2 q7
+===================================================
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int count = 0;
+            Console.WriteLine("Enter the number of matches");
+            int n = Convert.ToInt32(Console.ReadLine());
+              int[] arr=new int[n];
+            Console.WriteLine("Enter the runs scored by the team");
+            for (int i = 0; i < n;i++ )
+            { arr[i]= Convert.ToInt32(Console.ReadLine()); }
+            for (int i = 0; i < n; i++)
+            {  
+                int flag=0;
+                for (int a = 2; a < arr[i]; a++)
+                {
+                    if (arr[i] % a == 0)
+                    { flag = 1; }
+                    
+                }
+                if (flag == 0) { count++; }             
+            }
+            Console.WriteLine("Number of prime scores : " + count);
+            Console.ReadLine();
+        }
+    }
+}
+===============================================================
+q8
+===============================================================
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int flag = 0;
+            int n=Convert.ToInt32(Console.ReadLine());
+            List<string> list = new List<string>();
+            for (int i = 0; i < n; i++)
+            {
+                list.Add(Console.ReadLine());
+            }
+            for (int i = 0; i < n; i++)
+            {
+               
+                    if (list[i].Contains("-0-0"))
+                    {
+                        string[] s = list[i].Split(new char[] { '-' });
+                        Console.WriteLine(s[0]);
+                        flag = 1;
+                        s[0] = "";
+                    }        
+            }
+            if (flag == 0)
+            { Console.WriteLine("No player has scored a duck"); }
+            
+                Console.ReadLine();
+        }
+    }
+}
+
+============================================================
