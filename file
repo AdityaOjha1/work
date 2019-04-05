@@ -1,0 +1,29 @@
+file s1 ques 1
+
+================================================
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        FileStream f = new FileStream("player.csv", FileMode.OpenOrCreate, FileAccess.Write);
+        StreamWriter sw = new StreamWriter(f);
+        Console.WriteLine("Enter the name of the player");
+        string name = Console.ReadLine();
+        Console.WriteLine("Enter the team name");
+        string teamName = Console.ReadLine();
+        Console.WriteLine("Enter the number of matches played");
+        int numberOfMatch = Convert.ToInt32(Console.ReadLine());
+        sw.Write(name + "," + teamName + "," + numberOfMatch);
+        sw.Close();
+        f.Close();
+        Console.ReadKey();
+    }
+}
+===================================================
